@@ -10,17 +10,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_19_201421) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_28_010203) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "daily_forecasts", force: :cascade do |t|
+  create_table "conditions", force: :cascade do |t|
+    t.string "time"
+    t.string "date"
     t.float "wave_height"
     t.string "wind_direction"
     t.float "wind_speed"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "time"
+  end
+
+  create_table "daily_forecasts", force: :cascade do |t|
+    t.float "wave_height_7AM"
+    t.string "wind_direction_7AM"
+    t.float "wind_speed_7AM"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.float "wave_height_12PM"
+    t.string "wind_direction_12PM"
+    t.float "wind_speed_12PM"
+    t.float "wave_height_5PM"
+    t.string "wind_direction_5PM"
+    t.float "wind_speed_5PM"
   end
 
 end

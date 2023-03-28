@@ -1,0 +1,2 @@
+class UpdateWindSpeedDataTypeDailyCondition < ApplicationRecord
+end

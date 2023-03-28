@@ -2,12 +2,6 @@
 post http://localhost:3000/conditions.json
 Content-Type: application/json
 
-{
-"wave_height" : 3,
-"wind_direction": "south",
-"wind_speed": 25,
-"time": "7AM"
-}
 
 # t.float "wave_height"
 # t.string "wind_direction"
