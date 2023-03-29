@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Second Beach 5 Day Forecast</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Current Boards</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Observed Conditions</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Board and Wetsuit Suggestion</a>
+        </li>
+        
+        
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">Date</th>
+      <th scope="col">Wave Height 7AM</th>
+      <th scope="col">Wind Direction 7AM</th>
+      <th scope="col">Wind Speed 7AM</th>      
+      <th scope="col">Wave Height 12PM</th>
+      <th scope="col">Wind Direction 12PM</th>
+      <th scope="col">Wind Speed 12PM</th>     
+      <th scope="col">Wave Height 5PM</th>
+      <th scope="col">Wind Direction 5PM</th>
+      <th scope="col">Wind Speed 5PM</th>
+    </tr>
+  </thead>
+  <tbody>
+   
+     <% @conditions.each do |condition| %>
+      <tr>
+      <% # # <th scope="row">1</th> %> 
+      <td>01/01/2001</td>
+      <td><%= condition.wave_height_7AM %> ft.</td>
+      <td><%= condition.wind_direction_7AM %> </td>
+      <td><%= condition.wind_speed_7AM %> mph</td>
+      <td><%= condition.wave_height_12PM %> ft.</td>
+      <td><%= condition.wind_direction_12PM %> </td>
+      <td><%= condition.wind_speed_12PM %> mph</td>
+      <td><%= condition.wave_height_5PM %> ft.</td>
+      <td><%= condition.wind_direction_5PM %> </td>
+      <td><%= condition.wind_speed_5PM %> mph</td>
+     
+    </tr>
+     <% end %>
+   
+  </tbody>
+</table>

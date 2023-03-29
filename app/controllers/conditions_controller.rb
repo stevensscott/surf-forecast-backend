@@ -79,6 +79,10 @@ class ConditionsController < ApplicationController
         render json: {message:condition.errors.full_messages}, status:422
     end
   end
+
+  def index
+    @conditions = DailyForecast.all
+  end
     
 end
 
