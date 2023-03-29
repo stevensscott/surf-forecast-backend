@@ -33,6 +33,9 @@ class ConditionsController < ApplicationController
     response_wind = HTTP.get('https://api.open-meteo.com/v1/forecast?latitude=41.55&longitude=-71.29&hourly=temperature_2m,windspeed_10m,winddirection_10m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch')
     wind_info=response_wind.parse(:json)
 
+  #Get Date
+    date=wind_info["hourly"]["time"][13]
+    new_date=date.slice(5..9)
  #7AM Info
     wave_seven_am=wave_height["hourly"]["wave_height"][13]
     wind_direction_seven_am=wind_info["hourly"]["winddirection_10m"][13]

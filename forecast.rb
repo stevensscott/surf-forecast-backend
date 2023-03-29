@@ -46,6 +46,11 @@ def convert_wind_from_cardinal_to_direction(cardinal_direction)
 end
 response = HTTP.get('https://api.open-meteo.com/v1/forecast?latitude=41.55&longitude=-71.29&hourly=temperature_2m,windspeed_10m,winddirection_10m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch')
 wind_info=response.parse(:json)
+date=wind_info["hourly"]["time"][13]
+new_date=date.slice(5..9)
+puts new_date
+pp wind_info["hourly"]["time"][18]
+pp wind_info["hourly"]["time"][23]
 wind_direction_seven_am=wind_info["hourly"]["winddirection_10m"][13]
 wind_direction_twelve_pm=wind_info["hourly"]["winddirection_10m"][18]
 wind_direction_five_pm=wind_info["hourly"]["winddirection_10m"][23]
