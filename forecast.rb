@@ -49,6 +49,7 @@ wind_info=response.parse(:json)
 date=wind_info["hourly"]["time"][13]
 new_date=date.slice(5..9)
 puts new_date
+pp wind_info
 pp wind_info["hourly"]["time"][18]
 pp wind_info["hourly"]["time"][23]
 wind_direction_seven_am=wind_info["hourly"]["winddirection_10m"][13]

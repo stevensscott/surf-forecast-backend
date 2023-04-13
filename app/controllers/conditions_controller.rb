@@ -26,13 +26,13 @@ class ConditionsController < ApplicationController
     
     end
 
- #Call API for Wave Information
+ #Call API for Wave Information -response returns next week worth of forecast
     response_wave = HTTP.get('https://marine-api.open-meteo.com/v1/marine?latitude=41.55&longitude=-71.29&hourly=wave_height&timezone=America%2FNew_York')
     wave_height=response_wave.parse(:json)
- #Call API for Wind Information
+ #Call API for Wind Information--response returns next week worth of forecast
     response_wind = HTTP.get('https://api.open-meteo.com/v1/forecast?latitude=41.55&longitude=-71.29&hourly=temperature_2m,windspeed_10m,winddirection_10m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch')
     wind_info=response_wind.parse(:json)
-
+  #13,18, 23 represent the indexes for 7AM, 12PM and 5PM for me. Do get the next 5 days I'd need some sort of loop to increment each by 24, for 5 loops, to grab 5 full days and save to DB.
   #Get Date
     date=wind_info["hourly"]["time"][13]
     new_date=date.slice(5..9)
@@ -72,6 +72,7 @@ class ConditionsController < ApplicationController
       wave_height_5PM: wave_five_pm_converted_to_feet,
       wind_direction_5PM: wind_direction_five_pm_converted,
       wind_speed_5PM: wind_speed_five_pm,
+      date: new_date
      
       )
     #if condition saves with no errors, render the condition

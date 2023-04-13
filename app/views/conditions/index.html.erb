@@ -1,4 +1,10 @@
 
+<body class="bg-image" 
+     style="background-image: url('https://img.freepik.com/free-photo/empty-sea-beach-background_74190-4002.jpg?w=1800&t=st=1680659395~exp=1680659995~hmac=75bd83aaf0a51148bcd8a8cc372229e978969507857fe366108292701859bb57');
+           height: 100vh ">
+
+
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Second Beach 5 Day Forecast</a>
@@ -24,9 +30,13 @@
   </div>
 </nav>
 
-<table class="table table-striped table-bordered">
+
+
+
+
+<table class="table table-light table-striped table-bordered table-responsive">
   <thead>
-    <tr class="table-primary">
+    <tr class="table-primary" >
       <th scope="col">Date</th>
       <th scope="col">Wave Height 7AM</th>
       <th scope="col">Wind Direction 7AM</th>
@@ -44,7 +54,8 @@
      <% @conditions.each do |condition| %>
       <tr>
       <% # # <th scope="row">1</th> %> 
-      <td>01/01/2001</td>
+      
+      <td style="width:1px; white-space:nowrap;"><%= condition.date %>               </td>
       <td><%= condition.wave_height_7AM %> ft.</td>
       <td><%= condition.wind_direction_7AM %> </td>
       <td><%= condition.wind_speed_7AM %> mph</td>
@@ -82,3 +93,6 @@
   </tbody>
   -->
 </table>
+
+
+</body>
