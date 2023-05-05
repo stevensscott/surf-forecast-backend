@@ -2,7 +2,12 @@
 post http://localhost:3000/conditions.json
 Content-Type: application/json
 
+### Get 5 day wave forecast
+get https://marine-api.open-meteo.com/v1/marine?latitude=41.55&longitude=-71.29&hourly=wave_height&timezone=America%2FNew_York
+Content-Type: application/json
 
-# t.float "wave_height"
-# t.string "wind_direction"
-# t.float "wind_speed"
+### Get 5 day wind forecast
+get https://api.open-meteo.com/v1/forecast?latitude=41.55&longitude=-71.29&hourly=temperature_2m,windspeed_10m,winddirection_10m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch
+Content-Type: application/json
+
+

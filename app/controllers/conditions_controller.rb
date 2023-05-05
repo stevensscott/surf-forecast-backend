@@ -86,6 +86,7 @@ class ConditionsController < ApplicationController
 
   def index
     @conditions = DailyForecast.all
+    render json: @conditions.as_json
   end
     
 end
