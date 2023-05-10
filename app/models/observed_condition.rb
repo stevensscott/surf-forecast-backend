@@ -1,0 +1,4 @@
+class ObservedCondition < ApplicationRecord
+
+ 
+end

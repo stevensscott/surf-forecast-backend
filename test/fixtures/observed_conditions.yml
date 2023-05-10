@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  actual_condition: MyString
+  string: MyString
+  board_ridden: MyString
+  match_forecast: MyString
+
+two:
+  date: MyString
+  actual_condition: MyString
+  string: MyString
+  board_ridden: MyString
+  match_forecast: MyString

@@ -10,4 +10,13 @@ Content-Type: application/json
 get https://api.open-meteo.com/v1/forecast?latitude=41.55&longitude=-71.29&hourly=temperature_2m,windspeed_10m,winddirection_10m&temperature_unit=fahrenheit&windspeed_unit=mph&precipitation_unit=inch
 Content-Type: application/json
 
+### Observed Condition Create Test
+post http://localhost:3000/observed_conditions.json
+Content-Type: application/json
 
+{
+  "date": "5-9",
+  "actual_condition": "chest high and clean",
+  "board_ridden": "ci mid 7'2",
+  "match_forecast": "yes"
+}

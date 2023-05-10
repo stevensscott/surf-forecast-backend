@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_07_194844) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_08_232152) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -48,6 +48,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_07_194844) do
     t.string "wind_direction_5PM"
     t.float "wind_speed_5PM"
     t.string "date"
+  end
+
+  create_table "observed_conditions", force: :cascade do |t|
+    t.string "date"
+    t.string "actual_condition"
+    t.string "board_ridden"
+    t.string "match_forecast"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

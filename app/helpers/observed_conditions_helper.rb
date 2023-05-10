@@ -1,0 +1,2 @@
+module ObservedConditionsHelper
+end

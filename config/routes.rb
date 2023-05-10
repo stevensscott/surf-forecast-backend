@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   get "/boards", to: "boards#index"
 
+  get "/observed_conditions", to: "observed_conditions#index"
+  post "/observed_conditions" => "observed_conditions#create"
 end
