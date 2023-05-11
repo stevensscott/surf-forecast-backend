@@ -1,9 +1,9 @@
 require 'httparty'
 require 'dotenv/tasks'
 namespace :forecast do
-  desc "Get daily surf forecast once a day"
+  desc "Get 5 Day Forecast once a day"
   task generate_forecast: :environment do
-    DailyForecast.create_one_day_forecast
+    DailyForecast.generate_five_day_forecast
   end
 
 end
