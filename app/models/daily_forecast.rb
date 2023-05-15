@@ -1,6 +1,6 @@
 class DailyForecast < ApplicationRecord
   require "http"
-  #enables me to retrieve data in the correct order from my model-5 days
+  #enables me to retrieve data in the correct order from my model-5 days-NOT CURRENTLY USED
   def self.get_five_day_forecast
     DailyForecast.last(5).reverse
   end
@@ -41,7 +41,7 @@ class DailyForecast < ApplicationRecord
 
 
 
- #create daily single day forecast by calling meteo.com free api
+ #create daily single day forecast by calling meteo.com free api-NOT CURRENTLY USED
   def self.create_one_day_forecast
 
   #Call API for Wave Information -response returns next week worth of forecast
@@ -104,7 +104,7 @@ class DailyForecast < ApplicationRecord
   end
 
 
-  #same code as  daily single day forecast except for using variables so that I can iterate and increment to create 5 day forecast
+  # Create A 5 day forecast. THIS IS WHERE I CALL THE API, GET THE RESPONSE, MODIFY THE DATA AND SAVE EACH DAILY FORECAST TO THE DB
   def self.create_five_day_forecast(seven_am,noon,five_pm)
    
 
@@ -167,7 +167,7 @@ class DailyForecast < ApplicationRecord
     end
   end
  
-  #generate 5 day forecast
+  #########generate 5 day forecast-THIS IS THE TASK TRIGGERED IN MY FORECAST.RAKE FILE#############
   #this uses the creat_five_day_forecast above and enables me to pass in variables to generate forecast for upcoming days.
   #the values passed in are the 7AM, noon, and 5 PM times as represented in the indexes in the json response for next 5 days
   #use request.http file to generate the json for review if needed.
