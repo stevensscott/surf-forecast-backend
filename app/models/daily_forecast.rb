@@ -1,6 +1,6 @@
 class DailyForecast < ApplicationRecord
   require "http"
-  #enables me to retrieve data in the correct order from my model-5 days-NOT CURRENTLY USED
+  #NOT CURRENTLY USED-enables me to retrieve data in the correct order from my model-5 days-NOT CURRENTLY USED
   def self.get_five_day_forecast
     DailyForecast.last(5).reverse
   end
@@ -41,7 +41,7 @@ class DailyForecast < ApplicationRecord
 
 
 
- #create daily single day forecast by calling meteo.com free api-NOT CURRENTLY USED
+ #NOT CURRENTLY USED-Create daily single day forecast by calling meteo.com free api-NOT CURRENTLY USED
   def self.create_one_day_forecast
 
   #Call API for Wave Information -response returns next week worth of forecast
@@ -69,7 +69,7 @@ class DailyForecast < ApplicationRecord
     wind_speed_five_pm=wind_info["hourly"]["windspeed_10m"][23]
   
     
-    #Convert Data to correct format
+    #Convert Data to correct format using methods at top of file
     wave_seven_am_converted_to_feet=metric_to_feet(wave_seven_am)
     wind_direction_seven_am_converted=convert_wind_from_cardinal_to_direction(wind_direction_seven_am)
     wave_twelve_pm_converted_to_feet=metric_to_feet(wave_twelve_pm)
